@@ -4,7 +4,8 @@
 			
 		</view>
 		<view ref="popRef" class="popup-content" v-show="msgShow" :style="_location">
-			<slot></slot>
+			<slot v-if="line == 0"></slot>
+			<text v-if="line == 1">{{message}}</text>
 		</view>
 	</view>
 </template>
@@ -40,7 +41,7 @@
 		},
 		data() {
 			return {
-			  zShow: false, // 是否展示,
+				zShow: false, // 是否展示,
 				translateValue: 0, // 位移距离
 				site: 0,
 				msgShow: false,
@@ -49,7 +50,9 @@
 					success: '#19be6b',
 					warn: '#ff9900',
 					error: '#ed3f14'
-				}
+				},
+				line: 0,
+				message: ''
 			};
 		},
 		computed: {
@@ -73,7 +76,11 @@
 			}
 		},
 		methods: {
-			show() {
+			show(message) {
+				if(typeof(message) != "undefined"){
+					this.line = 1;
+					this.message = message;
+				}
 				this.msgShow = true;
 				if(this.showPop){
 					this.zShow = true;

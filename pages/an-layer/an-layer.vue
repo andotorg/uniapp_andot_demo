@@ -34,7 +34,7 @@
 		methods: {
 			showMsg(type){
 				this.type = type;
-				this.$refs.anRef.show();
+				this.$refs.anRef.show('Hello Lucas');
 			}
 		}
 	}

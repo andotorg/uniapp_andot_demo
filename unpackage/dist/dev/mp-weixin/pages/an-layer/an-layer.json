@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "全局提醒-AnLayer",
+  "usingComponents": {
+    "an-layer": "/components/an-layer/an-layer"
+  }
+}

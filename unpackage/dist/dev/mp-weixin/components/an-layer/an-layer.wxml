@@ -1,1 +1,0 @@
-<view><view hidden="{{!(zShow)}}" class="an-layer"></view><view data-ref="popRef" hidden="{{!(msgShow)}}" class="popup-content vue-ref" style="{{(_location)}}"><slot></slot></view></view>

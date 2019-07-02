@@ -1,1 +1,0 @@
-<view class="content"><view><image style="width:100%;" src="../../static/logo_chield.png"></image></view><view><button type="default" data-event-opts="{{[['tap',[['goto',['anLayer']]]]]}}" bindtap="__e">AnLayer</button></view></view>

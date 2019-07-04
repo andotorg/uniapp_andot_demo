@@ -19,3 +19,7 @@ export default {
 ```
 <an-upload-img></an-upload-img>
 ```
+
+### 1.1 更新日志
+
+> 增加删除方法实现

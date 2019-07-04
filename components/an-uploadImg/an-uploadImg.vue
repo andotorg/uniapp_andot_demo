@@ -60,7 +60,15 @@
 				});
 			},
 			handleRemove(index){
-				
+				let il=[], ibl=[];
+				for (var i = 0; i < this.imgList.length; i++) {
+					if(i != index){
+						il.push(this.imgList[i]);
+						ibl.push(this.imgBase64List[i]);
+					}
+				}
+				this.imgList = il;
+				this.imgBase64List = ibl;
 			}
 		}
 	}

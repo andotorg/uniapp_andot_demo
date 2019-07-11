@@ -42,5 +42,9 @@ height | Number | 90 | 图片高度，单位：小于1( 0.2 => 20% )则为百分
 > mode 属性具体详细请看官网
 [mode 有效值](https://uniapp.dcloud.io/component/image)
 
+### 1.1 Update log
+
+> 解决了当数据重新加载，导致图片不切换bug
+
 > 有大家可能问我为什么，我的标签前面都有一个an， 因为工作室为Andot Studio， 所以使用an， 蚁点（Andot）
 网站：https://andot.org

@@ -4,12 +4,12 @@
 			
 		</view>
 		<view ref="popRef" class="an-message" v-show="msgShow" :style="_location">
-			<view v-if="direction == 'left' || direction == 'right'" style="width: 540upx; height: 60upx; background-color: #0081FF; line-height: 60upx; text-align: center; color: #FFFFFF;">
-				<text>{{title}}</text>
+			<view v-if="an_direction == 'left' || an_direction == 'right'" style="width: 540upx; height: 60upx; background-color: #0081FF; line-height: 60upx; text-align: center; color: #FFFFFF;">
+				<text>{{an_title}}</text>
 			</view>
 			<view class="scoll">
 				<slot v-if="line == 0"></slot>
-				<text v-if="line == 1">{{message}}</text>
+				<text v-if="line == 1">{{an_message}}</text>
 			</view>
 		</view>
 	</view>
@@ -60,9 +60,15 @@
 					error: '#ed3f14'
 				},
 				line: 0,
-				message: '',
 				opacity: 0,
-				msgShow: false
+				msgShow: false,
+				an_message: '',
+				an_showPop: this.showPop,
+				an_direction: this.direction,
+				an_autoClose: this.autoClose,
+				an_time: this.time,
+				an_type: this.type,
+				an_title: this.title,
 			};
 		},
 		computed: {
@@ -74,44 +80,63 @@
 					'right': 'transform:translateX('+(0-this.translateValue)+'%)'
 				};
 				
-				return transformObj[this.direction]
+				return transformObj[this.an_direction]
 			},
 			_location() {
 				const positionValue = {
-					'bottom': 'bottom:0px;width:100%;background-color:'+this.bgColor[this.type]+';opacity:'+this.opacity+';',
-					'top': 'top:0px;width:100%;background-color:'+this.bgColor[this.type]+';opacity:'+this.opacity+';',
+					'bottom': 'bottom:0px;width:100%;background-color:'+this.bgColor[this.an_type]+';opacity:'+this.opacity+';',
+					'top': 'top:0px;width:100%;background-color:'+this.bgColor[this.an_type]+';opacity:'+this.opacity+';',
 					'right': 'right:0px;top:0;height:100%;color:#000;padding: 20upx;opacity:'+this.opacity+';',
 					'left': 'left:0px;top:0;height:100%;color:#000;padding: 20upx;opacity:'+this.opacity+';'
 				};
-				return positionValue[this.direction]+ this._translate;
+				return positionValue[this.an_direction]+ this._translate;
 			}
 		},
 		mounted() {
 			this.msgShow = true;
 		},
 		methods: {
-			show(message) {
+			show(message, option) {
+				console.log(this.an_message)
 				if(typeof(message) != "undefined"){
 					this.line = 1;
-					this.message = message;
+					this.an_message = message;
+				}
+				if(typeof(option) != "undefined"){
+					if(typeof(option.showPop) != "undefined"){
+						this.an_showPop = option.showPop;
+					}
+					if(typeof(option.direction) != "undefined"){
+						this.an_direction = option.direction;
+					}
+					if(typeof(option.autoClose) != "undefined"){
+						this.an_autoClose = option.autoClose;
+					}
+					if(typeof(option.time) != "undefined"){
+						this.an_time = option.time;
+					}
+					if(typeof(option.type) != "undefined"){
+						this.an_type = option.type;
+					}
+					if(typeof(option.title) != "undefined"){
+						this.an_title = option.title;
+					}
 				}
 				this.opacity = 1;
 				this.translateValue = 0;
-				if(this.showPop){
+				if(this.an_showPop){
 					this.zShow = true;
 				}
 				let that = this;
 				
-				console.log(this.autoClose)
-				if(this.autoClose){
-					console.log('你要自动')
+				if(this.an_autoClose){
 					setTimeout(function(){
 						that.opacity = 0;
 						that.translateValue = -100;
-						if(that.showPop){
+						if(that.an_showPop){
 							that.zShow = false;
 						}
-					}, that.time*1000)
+					}, that.an_time*1000)
 				}
 			},
 			close() {
@@ -144,8 +169,8 @@
 		font-size: 14px;
 		text-align: center;
 		color: #FFFFFF;
-		height: 40upx;
-		line-height: 40upx;
+		height: 60upx;
+		line-height: 60upx;
 	}
 	.scoll{
 		overflow-y: auto;

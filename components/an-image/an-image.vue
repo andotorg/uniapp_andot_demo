@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<image :src="url" :mode="mode" @error="imgError" :style="'width:'+(width<1?width*100+'%;':width+'px;')+'; height: '+(height<1?height*100+'%;':height+'px;')"></image>
+		<image :src="url==''?src:url" :mode="mode" @error="imgError" :style="'width:'+(width<1?width*100+'%;':width+'px;')+'; height: '+(height<1?height*100+'%;':height+'px;')"></image>
 	</view>
 </template>
 
@@ -9,7 +9,7 @@
 		props: {
 			src: {
 				type: String,
-				default: ''
+				default: '' 
 			},
 			alt: {
 				type: String,
@@ -17,7 +17,7 @@
 			},
 			mode: {
 				type: String,
-				default: ''
+				default: 'scaleToFill'
 			},
 			width: {
 				type: Number,
@@ -30,7 +30,7 @@
 		},
 		data() {
 			return {
-				url: this.src
+				url: ''
 			};
 		},
 		methods: {

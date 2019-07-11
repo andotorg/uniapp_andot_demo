@@ -9,6 +9,9 @@
 		<view>
 			<button type="default" @click="goto('anTextAreaTip')">AnTextAreaTip</button>
 		</view>
+		<view>
+			<button type="default" @click="goto('anImage')">AnImage</button>
+		</view>
 	</view>
 </template>
 
@@ -19,6 +22,7 @@
 				servicePages: {
 					anLayer: '../an-layer/an-layer',
 					anTextAreaTip: '../anTextAreaTip/anTextAreaTip',
+					anImage: '../an-image/an-image',
 				}
 			}
 		},

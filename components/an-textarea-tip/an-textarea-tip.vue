@@ -64,5 +64,6 @@
 		text-align:center;
 		height:20px;
 		padding:0 5px;
+		border-radius: 20upx;
 	}
 </style>

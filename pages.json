@@ -18,6 +18,12 @@
 				"navigationBarTitleText": "文本域提示-AnTextAreaTip"
 			}
         }
+        ,{
+            "path" : "pages/an-image/an-image",
+            "style" : {
+            	"navigationBarTitleText": "增强媒体图片-AnImage"
+            }
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

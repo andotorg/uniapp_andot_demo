@@ -94,6 +94,12 @@
 		},
 		mounted() {
 			this.msgShow = true;
+			this.an_showPop = this.showPop;
+			this.an_direction = this.direction;
+			this.an_autoClose = this.autoClose;
+			this.an_time = this.time;
+			this.an_type = this.type;
+			this.an_title = this.title;
 		},
 		methods: {
 			show(message, option) {

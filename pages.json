@@ -12,6 +12,18 @@
 				"navigationBarTitleText": "全局提醒-AnLayer"
 			}
         }
+        ,{
+            "path" : "pages/anTextAreaTip/anTextAreaTip",
+            "style" : {
+				"navigationBarTitleText": "文本域提示-AnTextAreaTip"
+			}
+        }
+        ,{
+            "path" : "pages/an-image/an-image",
+            "style" : {
+            	"navigationBarTitleText": "增强媒体图片-AnImage"
+            }
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

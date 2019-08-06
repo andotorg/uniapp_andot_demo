@@ -28,7 +28,11 @@
 			return {
 				weekItemWH: (uni.getSystemInfoSync().windowWidth-8)/7,
 				week: ['天', '一', '二', '三', '四', '五', '六'],
+<<<<<<< HEAD
 				weekDay: this.loadWeekData(),
+=======
+				weekDay: [],
+>>>>>>> 5df3e2602a390e255c6472bd8c311bb7b362d277
 				weekCur: this.current,
 			};
 		},
@@ -39,6 +43,12 @@
 				}
 			}
 		},
+<<<<<<< HEAD
+=======
+		mounted() {
+			this.loadWeekData();
+		},
+>>>>>>> 5df3e2602a390e255c6472bd8c311bb7b362d277
 		methods:{
 			onClick(index, fullDate) {
 				if (this.weekCur !== index) {
@@ -47,11 +57,18 @@
 				}
 			},
 			loadWeekData(){
+<<<<<<< HEAD
 				let arr = [];
 				for (var i = 0; i < 7; i++) {
 					arr.push(this.getDayWeek(i));
 				}
 				return arr;
+=======
+				for (var i = 0; i < 7; i++) {
+					this.weekDay.push(this.getDayWeek(i));
+					console.log(this.getDayWeek(i))
+				}
+>>>>>>> 5df3e2602a390e255c6472bd8c311bb7b362d277
 			},
 			getDayWeek(day){
 				let today = new Date(this.date);
@@ -63,10 +80,16 @@
 				let y = today.getFullYear();
 				let m = today.getMonth()+1;
 				let d = today.getDate();
+<<<<<<< HEAD
 				let weeks = ['天', '一', '二', '三', '四', '五', '六'];
 				let obj = {
 					day: (m<10?'0'+m:m)+'-'+(d<10?'0'+d:d),
 					week: weeks[today.getDay()],
+=======
+				let obj = {
+					day: (m<10?'0'+m:m)+'-'+(d<10?'0'+d:d),
+					week: this.week[today.getDay()],
+>>>>>>> 5df3e2602a390e255c6472bd8c311bb7b362d277
 					fullDate: y+'-'+(m<10?'0'+m:m)+'-'+(d<10?'0'+d:d)
 				};
 				return obj;

@@ -6,6 +6,12 @@
 		<view>
 			<button type="default" @click="goto('anLayer')">AnLayer</button>
 		</view>
+		<view>
+			<button type="default" @click="goto('anTextAreaTip')">AnTextAreaTip</button>
+		</view>
+		<view>
+			<button type="default" @click="goto('anImage')">AnImage</button>
+		</view>
 	</view>
 </template>
 
@@ -14,7 +20,9 @@
 		data() {
 			return {
 				servicePages: {
-					anLayer: '../an-layer/an-layer'
+					anLayer: '../an-layer/an-layer',
+					anTextAreaTip: '../anTextAreaTip/anTextAreaTip',
+					anImage: '../an-image/an-image',
 				}
 			}
 		},

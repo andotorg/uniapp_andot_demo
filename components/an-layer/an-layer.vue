@@ -86,14 +86,25 @@
 				const positionValue = {
 					'bottom': 'bottom:0px;width:100%;background-color:'+this.bgColor[this.an_type]+';opacity:'+this.opacity+';',
 					'top': 'top:0px;width:100%;background-color:'+this.bgColor[this.an_type]+';opacity:'+this.opacity+';',
+<<<<<<< HEAD
 					'right': 'right:0px;top:0;height:100%;color:#000;opacity:'+this.opacity+';',
 					'left': 'left:0px;top:0;height:100%;color:#000;opacity:'+this.opacity+';'
+=======
+					'right': 'right:0px;top:0;height:100%;color:#000;padding: 20upx;opacity:'+this.opacity+';',
+					'left': 'left:0px;top:0;height:100%;color:#000;padding: 20upx;opacity:'+this.opacity+';'
+>>>>>>> 5df3e2602a390e255c6472bd8c311bb7b362d277
 				};
 				return positionValue[this.an_direction]+ this._translate;
 			}
 		},
 		mounted() {
 			this.msgShow = true;
+			this.an_showPop = this.showPop;
+			this.an_direction = this.direction;
+			this.an_autoClose = this.autoClose;
+			this.an_time = this.time;
+			this.an_type = this.type;
+			this.an_title = this.title;
 		},
 		methods: {
 			show(message, option) {

@@ -79,9 +79,11 @@
 				if(this.check()){
 					return;
 				}
+				let arr = [];
 				for (var i = 0; i < 7; i++) {
-					this.weekDay.push(this.getDayWeek(i));
+					arr.push(this.getDayWeek(i));
 				}
+				return arr;
 			},
 			getDayWeek(day){
 				let today = new Date(this.date);

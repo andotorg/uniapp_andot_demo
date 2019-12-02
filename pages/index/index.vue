@@ -12,18 +12,26 @@
 		<view>
 			<button type="default" @click="goto('anImage')">AnImage</button>
 		</view>
+		<view>
+			<an-notice-bar :text="noticeMsg" @more="more"></an-notice-bar>
+		</view>
 	</view>
 </template>
 
 <script>
+	import AnNoticeBar from '../../components/an-notice-bar/an-notice-bar.vue'
 	export default {
+		components: {
+			AnNoticeBar
+		},
 		data() {
 			return {
 				servicePages: {
 					anLayer: '../an-layer/an-layer',
 					anTextAreaTip: '../anTextAreaTip/anTextAreaTip',
 					anImage: '../an-image/an-image',
-				}
+				},
+				noticeMsg: 'Hello Lucas|Hello Andot | andot.org Andot Studio'
 			}
 		},
 		onLoad() {
@@ -33,6 +41,11 @@
 			goto(type){
 				uni.navigateTo({
 					url: this.servicePages[type]
+				})
+			},
+			more(){
+				uni.showToast({
+					title: '查看更多'
 				})
 			}
 		}

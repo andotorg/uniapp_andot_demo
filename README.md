@@ -2,17 +2,26 @@
 uniapp an_layer 全局提醒弹框 message
 
 ### AnLayer Introduction
-[AnLayer Click Here](https://github.com/andotorg/uniapp_andot_demo/tree/master/components/an-layer)
+[AnLayer Click Here](components/an-layer)
 
 ### AnUploadImg Introduction
-[AnUploadImg Click Here](https://github.com/andotorg/uniapp_andot_demo/tree/master/components/an-uploadImg)
+[AnUploadImg Click Here](components/an-uploadImg)
 
 ### AnTextAreaTip Introduction
-[AnTextAreaTip Click Here](https://github.com/andotorg/uniapp_andot_demo/tree/master/components/an-textarea-tip)
+[AnTextAreaTip Click Here](components/an-textarea-tip)
 
 ### AnImage Introducation
-[AnImage Click Here](https://github.com/andotorg/uniapp_andot_demo/tree/master/components/an-image)
+[AnImage Click Here](components/an-image)
 
-### AnDateBar Introduction
+### AnNoticeBar Introducation
+[AnNoticeBar Click Here](components/an-notice-bar)
 
-> 敬請期待
+### AnWeekBar Introduction
+
+[AnWeekBar Click Here](components/an-week-bar)
+
+> 更多功能敬請期待
+
+### Introduction
+
+[Dev Note](doc/dev.md)
